@@ -1,0 +1,123 @@
+body {
+    background: #212121;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    padding: 6px;
+    min-width: 230px;
+    max-width: 315px;
+    width: 100%;
+    box-shadow: none !important;
+    transform: translateZ(0);
+    box-sizing: padding-box;
+}
+
+.container img {
+    max-width: 100%;
+    vertical-align: top;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.container .border {
+    position: absolute;
+    opacity: 0.45;
+}
+
+.container .border::before,
+.container .border::after,
+.container .border div::before,
+.container .border div::after {
+    background: #370fe9;
+    position: absolute;
+    content: '';
+    display: block;
+    transition: all 0.4s ease-in-out;
+}
+
+.container .border::before,
+.container .border::after {
+    width: 0;
+    height: 8px;
+}
+
+.container .border div::before,
+.container .border div::after {
+    width: 8px;
+    height: 0;
+}
+
+.container .border.one {
+    left: 0;
+    top: 0;
+    right: 12px;
+    bottom: 12px;
+}
+
+.container .border.one::before,
+.container .border.one div::before {
+    left: 0;
+    top: 0;
+}
+
+.container .border.one::after,
+.container .border.one div::after {
+    bottom: 0;
+    right: 0;
+}
+
+.container .border.two {
+    left: 12px;
+    top: 12px;
+    right: 0;
+    bottom: 0;
+}
+
+.container .border.two::before,
+.container .border.two div::before {
+    right: 0;
+    top: 0;
+}
+
+.container .border.two::after,
+.container .border.two div::after {
+    bottom: 0;
+    left: 0;
+}
+
+.container a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.container:hover .border::before,
+.container:hover .border::after {
+    width: 100%;
+}
+
+.container:hover .border div::before,
+.container:hover .border div::after {
+    height: 100%;
+}
+
+@media (max-width: 991px) {
+    body {
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+}
+
